@@ -1,0 +1,30 @@
+{
+  "name": "bit-face",
+  "version": "1.0.0",
+  "description": "Pseudorandom pixel art avatar generator.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "node build-base64.js && tsc || browserify dist/index.js > client.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "readme": "README.md",
+  "keywords": ["seudorandom", "pixel-art", "avatar", "generator"],
+  "author": {
+    "name": "nemethe",
+    "email": "public.nemethe@gmail.com",
+    "url": "https://nemethe.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nemethe/bit-facec.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "random-seed": "^0.3.0"
+  }
+}
