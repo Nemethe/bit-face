@@ -1,5 +1,5 @@
+import { create } from "random-seed";
 import source from "./base64.json";
-import { create } from 'random-seed';
 
 const colors = {
   skin: ['#f5ba81'],
@@ -93,7 +93,7 @@ const hexToRgb = (hex: string) : number[] => {
 }
 
 const getAvatar = async (seed: string = "1337", gender: number = 1) => {
-  const canvas = document.createElement('canvas');
+  const canvas = document.createElement("canvas");
   canvas.width = size.width;
   canvas.height = size.height;
   const ctx = canvas.getContext("2d");
@@ -102,12 +102,12 @@ const getAvatar = async (seed: string = "1337", gender: number = 1) => {
 
   const gradientIndex = seededRandom.intBetween(0, backgroundGradients.length - 1);
 
-  const grd = ctx.createLinearGradient(0, 0, 0, 40);
+  const grd = ctx.createLinearGradient(0, 0, 0, size.height);
   grd.addColorStop(0, backgroundGradients[gradientIndex][1]);
   grd.addColorStop(1, backgroundGradients[gradientIndex][0]);
 
   ctx.fillStyle = grd;
-  ctx.fillRect(0, 0, 40, 40);
+  ctx.fillRect(0, 0, size.width, size.height);
 
   const addBase64 = async (base64: any, color: number[]) => {
     const image = new Image();
@@ -115,7 +115,7 @@ const getAvatar = async (seed: string = "1337", gender: number = 1) => {
     image.src = `data:image/png;base64,${base64}`;
     await image.decode();
 
-    const bufferCanvas = document.createElement('canvas');
+    const bufferCanvas = document.createElement("canvas");
     bufferCanvas.width = canvas.width;
     bufferCanvas.height = canvas.width;
     const bufferCtx = bufferCanvas.getContext("2d");
@@ -155,11 +155,11 @@ const getAvatar = async (seed: string = "1337", gender: number = 1) => {
       !(key in optional && optional[key as keyof typeof optional] < seededRandom.intBetween(1, 100))
     ) {
       let base64: any = source;
-      key.split('/').forEach((literal) => {
+      key.split("/").forEach((literal) => {
         base64 = base64[literal as keyof typeof base64];
       });
 
-      if (typeof base64 == 'object') {
+      if (typeof base64 == "object") {
         const keys: string[] = Object.keys(base64);
         base64 = base64[keys[seededRandom.intBetween(0, keys.length - 1)]];
       }
