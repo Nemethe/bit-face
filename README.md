@@ -2,7 +2,7 @@
 
 Pseudorandom pixel art avatar generator.
 
-![alt text](examples.png)
+![avatars examples](https://raw.githubusercontent.com/Nemethe/bit-face/master/examples.png)
 
 ## Usage
 
