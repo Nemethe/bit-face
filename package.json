@@ -1,6 +1,6 @@
 {
   "name": "bit-face",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pseudorandom pixel art avatar generator.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

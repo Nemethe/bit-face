@@ -4,6 +4,10 @@ Pseudorandom pixel art avatar generator.
 
 ![avatars examples](https://raw.githubusercontent.com/Nemethe/bit-face/master/examples.png)
 
+## Installation
+
+`npm i bit-face --save`
+
 ## Usage
 
 ```
