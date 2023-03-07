@@ -11,7 +11,8 @@
   },
   "readme": "README.md",
   "keywords": [
-    "seudorandom",
+    "pseudorandom",
+    "random",
     "pixel-art",
     "avatar",
     "generator"
